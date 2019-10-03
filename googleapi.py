@@ -25,7 +25,7 @@ class Geodata():
 			return False
 
 	def get_coordinates(self, lat, lng):
-		response =requests.get('{}latlng={},{}&key={}'.format((url),lat,lng,keys['key']))
+		response = requests.get('{}latlng={},{}&key={}'.format((url),lat,lng,keys['key']))
 		response_dict = response.json()
 		if self.check_answer(response_dict):
 			print(response_dict['results'][0]['formatted_address'])
